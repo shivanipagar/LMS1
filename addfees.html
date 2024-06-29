@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .head {
+        background: transparent;
+        background-color: white;
+        position: sticky;
+        top: 0;
+    }
+
+    .heading {
+        display: flex;
+    }
+
+    .heading h1 {
+        color: #861F41;
+        margin-left: 5%;
+    }
+
+    .heading i {
+        display: none;
+
+    }
+
+    .headrow {
+        box-shadow: 0px 0px 5px 1px gray;
+    }
+
+    .offcanvas {
+        height: 100%;
+        width: 40%;
+    }
+
+    .offcanvas {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-100%);
+        transition: 0.2s linear;
+    }
+
+    .offcanvas.show {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(0);
+    }
+
+    .icons ul {
+        list-style-type: none;
+        padding-left: 35%;
+        padding-top: 10%;
+    }
+
+    .icons ul li {
+        padding-top: 15%;
+    }
+
+    .icons img {
+        width: 45%;
+        padding-top: 3%;
+    }
+
+    .logout {
+        margin-top: 60vh;
+    }
+
+    aside {
+        border-right: 2px solid grey;
+        box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .maincontent {
+        margin-top: 2vh;
+        /* position: fixed;
+        left: 8%; */
+    }
+
+    .update-btn {
+        background-color: #861F41;
+        color: white;
+    }
+
+    /* form input {
+        border-radius: 5px;
+        border: 2px solid #9A9E9E;
+    } */
+form{
+    box-shadow: 0px 2px 0px 2px grey;
+    border-radius: 20px;
+}
+::placeholder{
+    font-size: 15px;
+    color: #9A9E9E;
+}
+label{
+    font-size: 20px;
+    font-weight: 500;
+}
+.rowicon{
+    display: none;
+}
+    @media screen and (min-width:580px) {
+        .maincontent{
+            margin-left: 8%;
+        }
+        .form-row {
+        padding-top: 0px;
+    }
+        .form-col{
+    margin-bottom: 2%;
+}
+
+
+    }
+
+    @media screen and (max-width:580px) {
+        .head {
+            text-align: center;
+        }
+
+        .heading i {
+            display: grid;
+            font-size: 30px;
+            padding-left: 0%;
+
+        }
+
+        .heading h1 {
+            margin: auto;
+        }
+
+        .icons1 ul {
+            list-style-type: none;
+        }
+
+        .icons1 ul li img {
+            width: 35px;
+        }
+
+        .logout {
+            margin-top: 0vh;
+        }
+
+        .icons {
+            display: none;
+
+        }
+
+        .maincontent {
+            margin-top: 2vh;
+            /* position: fixed;
+            left: 0%;
+            right: 0%; */
+        }
+
+
+
+        .mainrow button {
+            height: auto;
+        }
+.form-row{
+    padding-top: 0%;
+}
+.form-col{
+    margin-bottom: 5%;
+}
+.rowicon{
+    
+    display: inline;
+}
+.rowbtn{
+    display: none;
+}
+    }
+</style>
+
+<body>
+    <!-- top heading -->
+    <div class="container-fluid head">
+        <div class="row headrow p-2 border-bottom border-secondary ">
+            <div class="col-sm-4 logo">
+                <img src="../LMS FIGMA/clerk/images/Group 532 2.png" alt="" width="140px" height="120px">
+            </div>
+            <div class="col-sm-8 heading pt-4">
+                <a class="btn p-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    aria-controls="offcanvasExample">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <h1>Welcome to LMS</h1>
+            </div>
+        </div>
+    </div>
+    <!-- mobile navbar -->
+    <div class="offcanvas offcanvas-md" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="icons1 ">
+            <ul class="p-0">
+                <li class="text-center">
+                    <h1>LMS</h1>
+                </li>
+                <li>
+                    <hr class="hr">
+                </li>
+                <li class="text-center p-2"><a href="clerk_welcome.html"><img src="../LMS FIGMA/clerk/images/home 1.png" alt=""></a></li>
+                <li class="text-center p-2"><a href="fees.html"><img src="../LMS FIGMA/clerk/images/coin 1.png" alt=""></a></li>
+                <li class="text-center p-2"><a href="clerk_login.html"><img src="../LMS FIGMA/clerk/images/logout 1.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- sidenav -->
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-lg-1 col-md-2 col-sm-2 p-0 ">
+                <aside class="icons position-fixed  h-100 w" style="width: 8%;">
+                    <ul>
+                        <li><a href="clerk_welcome.html"><img src="../LMS FIGMA/clerk/images/home 1.png" alt=""></a></li>
+                        <li><a href="fees.html"><img src="../LMS FIGMA/clerk/images/coin 1.png" alt=""></a></li>
+                        <li class=" logout mb-3"><a href="clerk_login.html"><img src="../LMS FIGMA/clerk/images/logout 1.png"
+                                    alt=""></a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- main content -->
+            <div class="col-lg-11 col-md-11 col-sm-10 maincontent">
+                <div class="container-fluid">
+                    <div class="row mainrow1">
+                        <div class="col-sm-6 col-md-7 col-lg-9">
+                            <ul class="d-flex p-1 " style="list-style-type: none;">
+                                <li><a href=""><img class="img-fluid my-2" src="../LMS FIGMA/clerk/images/coin 1.png"
+                                            style="width: 35px;" alt=""></a></li>
+                                <li class="mx-3 mt-2">
+                                    <a href="" class="text-decoration-none fw-bold fs-3" style="color: #861F41;">New
+                                        Fees</a>
+                                </li>
+                                <li class="rowicon mx-5 mt-2 fs-2"><a href=""><i class="fa-regular fa-eye"></i></a></li>
+                                <li class="rowicon mx-1 mt-2 fs-2"><a href=""><i class="fa-regular fa-bookmark"></i></a></li> 
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-5 col-lg-3 rowbtn">
+                            <ul class="d-flex p-0" style="list-style-type: none;">
+                                <li class="mx-2 mt-2 " style="border: 1px solid black; border-radius: 5px;"><a href=""
+                                        class="btn fw-bold fs-5 text-decoration-none" style="color: black;">View </a>
+                                </li>
+                                <li class="mx-2 mt-2 "><a href="" class="btn fw-bold fs-5 text-decoration-none"
+                                        style="background-color: blue;color: white; width: 110%;">Save</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                            <div class="col-md-1 col-sm-1 col-lg-2">
+
+                            </div>
+                            <div class="col-md col-sm col-lg mainform">
+                                <form class="p-3" >
+                                    <div class="row border-bottom">
+                                        <div class="col-md d-flex">
+                                            <img class="img-fluid" src="images/Group 467.png " style="width: 35px; height: 35px;"
+                                                alt="">
+                                            <p class="fs-3" style="color: blue;">Fill the details</p>
+                                        </div>
+                                    </div>
+            
+                                    <!-- First row -->
+                                    <div class="row  form-row">
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="sid">Student ID</label>
+                                                <input type="text" class="form-control" required id="sid"
+                                                    placeholder="Enter Student ID">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="cid">Class ID</label>
+                                                <input type="text" class="form-control"required id="cid"
+                                                    placeholder="Enter Class ID">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Second row -->
+                                    <div class="row form-row">
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="div">Division</label>
+                                                <input type="text" class="form-control"required id="div"
+                                                    placeholder="Enter Division ">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="tfees">Total Fess</label>
+                                                <input type="text" class="form-control"required id="tfees"
+                                                    placeholder="Enter Total Fess">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Third row -->
+                                    <div class="row form-row">
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="rfees">Remaining Fees</label>
+                                                <input type="text" class="form-control"required id="rfees"
+                                                    placeholder=" Enter Remaining Fees">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6 form-col">
+                                            <div class="form-group">
+                                                <label for="pfees">Paid Fees</label>
+                                                <input type="text" class="form-control"required id="pfees"
+                                                    placeholder="Enter Paid Fees ">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Fourth row -->
+                                    <div class="row form-row">
+                                        <div class="col-md-12 form-col">
+                                            <div class="form-group">
+                                                <label for="ofees">Other Fees</label>
+                                                <textarea class="form-control"required id="ofees" rows="4"
+                                                    placeholder="Enter Other Fees"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-row">
+<div class="col-5"></div>
+                                        <div class="col-md">   <a href="">                         
+                                            <button type="submit" class="btn px-4"
+                                        style="background-color: #861F41; color: white;">Submit</button></a>  
+                                    </div>
+                                    <div class="col-5"></div>
+                                    </div>
+ 
+                                </form>
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-lg-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

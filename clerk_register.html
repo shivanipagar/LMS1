@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Registration</title>
+    <style>
+        * {
+            font-family: "Montserrat", sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        form label {
+            font-weight: 500;
+            font-size: 20px;
+        }
+        ::placeholder{
+            padding-left: 8px;
+            font-size: 15px;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="images/Group 532 2.png" width="140px" height="120px">
+            </div>
+        </div>
+        <div class="row pt-3 pb-5">
+            <div class="col">
+                <h3>Registrartion Form</h3>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-sm-1 col-md-1 col-lg-2"></div>
+    <div class="col-sm col-md  col-lg">
+    <div class="container-fluid RegForm  p-2">
+
+        <div class="row">
+            <div class=" col-md-1 col-sm-1 col-lg-2"></div>
+            <div class="col-md-10 col-lg-8 col-sm-10">
+                <form>
+                    <div class="row">
+                        <div class="col-md-11  col-sm-12 ">
+                            <label for="name" class="d-block pb-1" > Full Name:</label>
+                            <input type="text" required id="name" name="name" placeholder="Enter Your Name"
+                                class="form-control mb-3 p-1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11 col-sm-12">
+                            <label for="email" class="d-block pb-1">Email Address:</label>
+                            <input type="email" required  id="email" name="email" placeholder="Enter Your Email"
+                                class="form-control mb-3   p-1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11 col-sm-12">
+                            <label for="uname" class="d-block pb-1">Username:</label>
+                            <input type="text" required  id="uname" name="uname" placeholder="Enter Your Username"
+                                class="form-control mb-3  p-1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11 col-sm-12">
+                            <label for="pass" class="d-block pb-1">Password:</label>
+                            <input type="password"  required id="pass" name="pass" placeholder="Enter Your password"
+                                class="form-control mb-5  p-1">
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md-11">
+                            <a href="#"><button type="submit" class="btn btnsignup p-1 fw-300 fs-6 text-decoration-none"
+                                style="background-color: #861F41;color: white; width: 130px;">Sign Up</button></a>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md-11">
+                            <p class="fs-6" style="color: #9A9E9E;">Already Have an Account? <span
+                                    style="color: #2442A9;"><a href="clerk_login.html">Sign In</a></span></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-1 col-sm-1 col-lg-2"></div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-1 col-md-1 col-lg-2"></div>
+</div>
+</div>
+</body>
+
+</html>
